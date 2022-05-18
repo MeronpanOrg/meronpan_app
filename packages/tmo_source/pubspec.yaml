@@ -1,0 +1,16 @@
+name: tmo_source
+description: Interfaces for create a http manga source.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
+dependencies:
+  http_source:
+    path: ../http_source/
+  equatable: ^2.0.3
+  dio: ^4.0.6
+  html: ^0.15.0
