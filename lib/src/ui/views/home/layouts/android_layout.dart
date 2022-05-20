@@ -16,23 +16,21 @@ class AndroidLayout extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     int page = ref.watch(uiProvider);
 
-    return OrientationBuilder(
-      builder: (context, orientation) {
-        if (orientation == Orientation.landscape) {
-          return Scaffold(
-            body: Row(
-              children: [
-                const NavRail(),
-                Expanded(child: _buildPage(page)),
-              ],
-            ),
-          );
-        }
-        return Scaffold(
-          body: _buildPage(page),
-          bottomNavigationBar: const NavBar(),
-        );
-      },
+    final Orientation orientation = MediaQuery.of(context).orientation;
+
+    if (orientation == Orientation.landscape) {
+      return Scaffold(
+        body: Row(
+          children: [
+            const NavRail(),
+            Expanded(child: _buildPage(page)),
+          ],
+        ),
+      );
+    }
+    return Scaffold(
+      body: _buildPage(page),
+      bottomNavigationBar: const NavBar(),
     );
   }
 
