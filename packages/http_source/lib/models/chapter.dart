@@ -6,10 +6,10 @@ class Chapter {
   final String scanlator;
 
   Chapter({
-    this.url,
-    this.name,
-    this.dateUpload,
-    this.chapterNumber,
+    required this.url,
+    required this.name,
+    required this.dateUpload,
+    required this.chapterNumber,
     this.scanlator = '',
   });
 }

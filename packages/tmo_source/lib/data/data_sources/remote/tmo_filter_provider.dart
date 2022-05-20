@@ -1,6 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tmo_source/data/data_sources/remote/data_sources/filters/tmo_filters.dart';
-import 'package:tmo_source/data/data_sources/remote/data_sources/filters/tmo_request.dart';
+import 'package:http_source/models/filter.dart' show triState;
+import 'package:tmo_source/data/data_sources/remote/filters/tmo_filters.dart';
+import 'package:tmo_source/data/data_sources/remote/filters/tmo_request.dart';
 
 
 final tmoFilterProvider =

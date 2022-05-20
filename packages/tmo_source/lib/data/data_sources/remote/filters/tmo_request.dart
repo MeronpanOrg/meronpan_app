@@ -1,5 +1,5 @@
-import 'package:meronpan/domain/models/filter_list.dart';
-import 'package:meronpan/data/tmo/remote/data_sources/filters/tmo_filters.dart';
+import 'package:http_source/models/filter_list.dart';
+import 'package:tmo_source/data/data_sources/remote/filters/tmo_filters.dart';
 
 class TMORequest {
   final TypeSelection typeSelection;

@@ -1,5 +1,8 @@
-import 'package:meronpan/domain/models/filter.dart';
-import 'package:meronpan/data/tmo/remote/data_sources/filters/genre.dart';
+
+
+import 'package:http_source/models/filter.dart';
+import 'package:tmo_source/data/data_sources/remote/filters/genre.dart';
+
 
 class GenreList extends FilterGroup<Genre> {
   final List<Genre> genres;

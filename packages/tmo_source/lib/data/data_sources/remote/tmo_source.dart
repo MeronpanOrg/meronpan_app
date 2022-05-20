@@ -1,22 +1,22 @@
 import 'package:dio/dio.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart' show parse;
-
+import 'package:http_source/models/filter.dart' show triState;
+import 'package:http_source/models/chapter.dart';
+import 'package:http_source/models/filter_list.dart';
+import 'package:http_source/models/manga.dart';
+import 'package:http_source/models/mangas_page.dart';
+import 'package:tmo_source/data/data_sources/remote/filters/tmo_filters.dart';
 
 class TmoSource {
-  Reader read;
-  final Dio _dio;
+  final Dio dio;
   final bool isSFWMode;
   final bool showAllScans;
 
-  TmoSource(this.read)
-      : _dio = read(dioProvider),
-        isSFWMode = read(preferencesProvider).get(PreferencesKeys.sfw),
-        showAllScans =
-            read(preferencesProvider).get(PreferencesKeys.showAllScans);
+  TmoSource(
+      {required this.dio, required this.isSFWMode, required this.showAllScans});
 
-  Dio get client => _dio;
+  Dio get client => dio;
   String get baseUrl => 'https://lectortmo.com';
 
   String get _oneShotChapterListSelector => 'li.list-group-item';

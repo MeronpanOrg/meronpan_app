@@ -5,7 +5,7 @@ class MangaDetails {
   final Manga manga;
   final List<Chapter> chapters;
 
-  MangaDetails({this.manga, this.chapters});
+  MangaDetails({required this.manga, required this.chapters});
 
   @override
   String toString() {

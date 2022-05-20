@@ -1,5 +1,7 @@
-import 'package:meronpan/data/tmo/remote/data_sources/filters/content_type.dart';
-import 'package:meronpan/domain/models/filter.dart';
+
+
+import 'package:http_source/models/filter.dart';
+import 'package:tmo_source/data/data_sources/remote/filters/content_type.dart';
 
 class ContentTypeList extends FilterGroup<ContentType> {
   final List<ContentType> content;

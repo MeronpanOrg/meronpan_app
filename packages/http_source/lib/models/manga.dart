@@ -1,4 +1,3 @@
-
 enum statusEnum {
   unknown,
   ongoing,
@@ -9,10 +8,9 @@ enum statusEnum {
   onHiatus,
 }
 
-
 class Manga {
-final String url;
-final String title;
+  final String url;
+  final String title;
   String artist;
   String author;
   String description;
@@ -22,8 +20,8 @@ final String title;
   bool initialized;
 
   Manga({
-    this.url,
-    this.title,
+    required this.url,
+    required this.title,
     this.artist = '',
     this.author = '',
     this.description = '',

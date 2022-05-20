@@ -1,5 +1,6 @@
-import 'package:meronpan/core/utils/pair.dart';
-import 'package:meronpan/domain/models/filter.dart';
+
+import 'package:http_source/models/filter.dart';
+import 'package:http_source/utils/pair.dart';
 
 class Selection extends PairSelection {
   const Selection(

@@ -1,5 +1,6 @@
 
-import 'package:meronpan/domain/models/filter.dart';
+import 'package:http_source/models/filter.dart';
+
 
 class Genre extends FilterTriState {
   final String id;

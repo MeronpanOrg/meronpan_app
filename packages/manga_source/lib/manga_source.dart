@@ -5,7 +5,7 @@ abstract class MangaSource {
   final String id;
   final String name;
 
-  MangaSource({this.id, this.name});
+  MangaSource({required this.id, required this.name});
 
   String get preferenceKey => "source_$id";
 }
