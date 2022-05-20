@@ -9,7 +9,9 @@ class ExploreView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Explorar'),
       ),
-      body: const Center(child: CircularProgressIndicator()),
+      body: const Center(
+        child: CircularProgressIndicator(),
+      ),
     );
   }
 }
