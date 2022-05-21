@@ -3,7 +3,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:meronpan_app/src/ui/providers/ui/ui_provider.dart';
 import 'package:meronpan_app/src/ui/views/explore/explore_view.dart';
 import 'package:meronpan_app/src/ui/views/home/home_view.dart';
-import 'package:meronpan_app/src/ui/views/home/widgets/nav_bar.dart';
 import 'package:meronpan_app/src/ui/views/home/widgets/nav_rail.dart';
 import 'package:meronpan_app/src/ui/views/library/library_view.dart';
 import 'package:meronpan_app/src/ui/views/more/more_view.dart';

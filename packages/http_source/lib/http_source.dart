@@ -2,11 +2,12 @@ import 'package:http_source/models/manga_details.dart';
 import 'package:http_source/models/mangas_page.dart';
 import 'package:manga_source/manga_source.dart';
 
-
 import 'models/filter_list.dart';
 import 'models/manga.dart';
 
 abstract class HttpSoure extends MangaSource {
+  HttpSoure({required super.id, required super.name});
+
   String get baseUrl;
   int get versionId;
   String get lang;

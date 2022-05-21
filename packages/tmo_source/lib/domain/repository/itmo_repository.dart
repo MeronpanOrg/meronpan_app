@@ -1,8 +1,7 @@
 import 'package:http_source/http_source.dart';
 
 abstract class ITmoRepository extends HttpSoure {
-  @override
-  String get name => 'TuMangaOnline';
+  ITmoRepository() : super(id: '1', name: 'TuMangaOnline');
 
   @override
   String get baseUrl => 'https://lectortmo.com';
