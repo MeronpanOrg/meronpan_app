@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:meronpan_app/src/ui/views/home/home_view.dart';
@@ -39,19 +41,38 @@ class MeronpanApp extends StatelessWidget {
             const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
         ),
-        navigationRailTheme: const NavigationRailThemeData(
-          useIndicator: true,
-          elevation: 4,
-          backgroundColor: Colors.white,
-          indicatorColor: Colors.lightBlueAccent,
-          groupAlignment: 0.5,
-          selectedLabelTextStyle: TextStyle(
-              fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
-          unselectedLabelTextStyle: TextStyle(
-              fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
-          selectedIconTheme: IconThemeData(color: Colors.black),
-        ),
+        navigationRailTheme:
+            Platform.isWindows ? _buildWindowsRailTheme() : _buildRailTheme(),
       ),
+    );
+  }
+
+  NavigationRailThemeData _buildRailTheme() {
+    return const NavigationRailThemeData(
+      useIndicator: true,
+      elevation: 4,
+      backgroundColor: Colors.white,
+      indicatorColor: Colors.lightBlueAccent,
+      groupAlignment: 0.5,
+      selectedLabelTextStyle: TextStyle(
+          fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
+      unselectedLabelTextStyle: TextStyle(
+          fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
+      selectedIconTheme: IconThemeData(color: Colors.black),
+    );
+  }
+
+  NavigationRailThemeData _buildWindowsRailTheme() {
+    return const NavigationRailThemeData(
+      useIndicator: true,
+      elevation: 4,
+      backgroundColor: Colors.white,
+      indicatorColor: Colors.lightBlueAccent,
+      selectedLabelTextStyle: TextStyle(
+          fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
+      unselectedLabelTextStyle: TextStyle(
+          fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
+      selectedIconTheme: IconThemeData(color: Colors.black),
     );
   }
 }
