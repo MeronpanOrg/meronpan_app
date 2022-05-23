@@ -5,8 +5,8 @@ import 'package:manga_source/manga_source.dart';
 import 'models/filter_list.dart';
 import 'models/manga.dart';
 
-abstract class HttpSoure extends MangaSource {
-  HttpSoure({required super.id, required super.name});
+abstract class HttpSource extends MangaSource {
+  HttpSource({required super.id, required super.name});
 
   String get baseUrl;
   int get versionId;
