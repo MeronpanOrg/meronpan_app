@@ -33,7 +33,6 @@ class MeronpanApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: const Color(0xfffcfcfc),
         navigationBarTheme: NavigationBarThemeData(
-          elevation: 4,
           backgroundColor: Colors.white,
           indicatorColor: Colors.lightBlueAccent,
           height: 70,
@@ -50,7 +49,6 @@ class MeronpanApp extends StatelessWidget {
   NavigationRailThemeData _buildRailTheme() {
     return const NavigationRailThemeData(
       useIndicator: true,
-      elevation: 4,
       backgroundColor: Colors.white,
       indicatorColor: Colors.lightBlueAccent,
       groupAlignment: 0.5,
@@ -65,7 +63,6 @@ class MeronpanApp extends StatelessWidget {
   NavigationRailThemeData _buildWindowsRailTheme() {
     return const NavigationRailThemeData(
       useIndicator: true,
-      elevation: 4,
       backgroundColor: Colors.white,
       indicatorColor: Colors.lightBlueAccent,
       selectedLabelTextStyle: TextStyle(
