@@ -20,6 +20,7 @@ class AndroidLayout extends ConsumerWidget {
 
     if (orientation == Orientation.landscape) {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Row(
           children: [
             const NavRail(),

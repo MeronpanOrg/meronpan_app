@@ -89,9 +89,6 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
                           ]
                         : [],
                   ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(height: 10),
-                  ),
                   if (mangas.isEmpty) _buildLoadingSliver(),
                   if (mangas.isNotEmpty)
                     ExploreViewAndroidLayout(mangas: mangas)

@@ -2,7 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:meronpan_app/src/ui/views/home/home_view.dart';
+import 'package:meronpan_app/src/ui/views/views.dart';
 
 class MeronpanApp extends StatelessWidget {
   const MeronpanApp({Key? key}) : super(key: key);
@@ -23,6 +23,7 @@ class MeronpanApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeView(),
+        '/manga': (context) => const MangaView()
       },
       themeMode: ThemeMode.system,
       theme: ThemeData.light().copyWith(
