@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:http_source/models/manga.dart';
 import 'package:meronpan_app/src/ui/providers/explore/explore_provider.dart';
 import 'package:meronpan_app/src/ui/providers/explore/state/explore_provider_state.dart';
+import 'package:meronpan_app/src/ui/views/explore/layouts/explore_view_android_layout.dart';
 import 'package:meronpan_app/src/ui/widgets/manga_cover.dart';
 
 class ExploreView extends ConsumerStatefulWidget {
@@ -16,7 +18,7 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
 
   final _searchQueryController = TextEditingController();
   bool _isSearching = false;
-  String searchQuery = 'Search query';
+  bool _wasSubmitted = false;
 
   void _onScroll() {
     if (_isBottom) {
@@ -64,86 +66,32 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
               return CustomScrollView(
                 controller: _scrollController,
                 slivers: [
-                  SliverSafeArea(
-                    sliver: SliverPadding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8.0,
-                      ),
-                      sliver: SliverAppBar(
-                        leading:
-                            !_isSearching ? const Icon(Icons.search) : null,
-                        floating: true,
-                  
-                        backgroundColor: Colors.red,
-                        shape: const StadiumBorder(),
-                        title: Column(
-                          children: [
-                            _buildSearchField(),
-                          ],
-                        ),
-                        actions: !_isSearching
-                            ? [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.view_list_sharp),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    ref
-                                        .read(exploreProvider.notifier)
-                                        .refresh();
-                                  },
-                                  icon: const Icon(Icons.refresh),
-                                ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.more_vert),
-                                ),
-                              ]
-                            : [],
-                      ),
-                    ),
-                  ),
-                  const SliverToBoxAdapter(
-                    child: SizedBox(height: 10),
+                  SliverAppBar(
+                    leading: !_isSearching ? const Icon(Icons.search) : null,
+                    floating: true,
+                    title: _buildSearchField(),
+                    actions: !_isSearching
+                        ? [
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.view_list_sharp),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                ref.read(exploreProvider.notifier).refresh();
+                              },
+                              icon: const Icon(Icons.refresh),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.more_vert),
+                            ),
+                          ]
+                        : [],
                   ),
                   if (mangas.isEmpty) _buildLoadingSliver(),
                   if (mangas.isNotEmpty)
-                    SliverGrid(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          return GestureDetector(
-                            onTap: () {
-                              // print(mangas[index].toJson());
-                              // ref.read(selectedMangaProvider.notifier).state =
-                              //     mangas[index];
-                              // Navigator.pushNamed(context, '/manga');
-                            },
-                            child: GridTile(
-                              child: Column(
-                                children: [
-                                  MangaCover(
-                                    manga: mangas[index],
-                                  ),
-                                  Text(
-                                    mangas[index].title,
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 2,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                        childCount: mangas.length,
-                      ),
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisSpacing: 8,
-                        crossAxisCount: 3,
-                        mainAxisExtent: 220,
-                      ),
-                    )
+                    ExploreViewAndroidLayout(mangas: mangas)
                 ],
               );
             },
@@ -203,17 +151,27 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
               ?.addLocalHistoryEntry(LocalHistoryEntry(onRemove: () {
             setState(() {
               _isSearching = false;
+              _searchQueryController.text = '';
+
+              if (_wasSubmitted) {
+                ref.read(exploreProvider.notifier).refresh();
+              }
+
               FocusScope.of(context).requestFocus(FocusNode());
             });
           }));
           setState(() {
             _isSearching = true;
+            _wasSubmitted = false;
           });
         }
       },
       onSubmitted: (query) {
         ref.read(exploreProvider.notifier).clean();
         ref.read(exploreProvider.notifier).getSearch(query);
+        setState(() {
+          _wasSubmitted = true;
+        });
       },
     );
   }
@@ -227,26 +185,6 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
   Widget _buildError() {
     return const Center(
       child: Text('Imposible cargar mangas'),
-    );
-  }
-}
-
-class SearchTextField extends StatelessWidget {
-  const SearchTextField({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      textInputAction: TextInputAction.search,
-      decoration: const InputDecoration(
-        hintText: 'Search manga...',
-        border: InputBorder.none,
-        hintStyle: TextStyle(color: Colors.black38),
-      ),
-      style: const TextStyle(color: Colors.black, fontSize: 16.0),
-      onSubmitted: (query) {},
     );
   }
 }

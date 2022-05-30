@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:http_source/models/manga.dart';
 
 class MangaCover extends StatelessWidget {
-  const MangaCover(
-      {Key? key, required this.manga, this.height = 170, this.width = 135})
-      : super(key: key);
+  const MangaCover({
+    Key? key,
+    required this.manga,
+  }) : super(key: key);
 
   final Manga manga;
-  final double height;
-  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +19,6 @@ class MangaCover extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: CachedNetworkImage(
-          height: height,
-          width: width,
           imageUrl: manga.thumbnailUrl,
           fit: BoxFit.cover,
           progressIndicatorBuilder: (context, url, downloadProgress) => Center(

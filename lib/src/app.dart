@@ -2,7 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:meronpan_app/src/ui/views/home/home_view.dart';
+import 'package:meronpan_app/src/ui/views/views.dart';
 
 class MeronpanApp extends StatelessWidget {
   const MeronpanApp({Key? key}) : super(key: key);
@@ -23,6 +23,7 @@ class MeronpanApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeView(),
+        '/manga': (context) => const MangaView()
       },
       themeMode: ThemeMode.system,
       theme: ThemeData.light().copyWith(
@@ -33,7 +34,6 @@ class MeronpanApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: const Color(0xfffcfcfc),
         navigationBarTheme: NavigationBarThemeData(
-          elevation: 4,
           backgroundColor: Colors.white,
           indicatorColor: Colors.lightBlueAccent,
           height: 70,
@@ -50,7 +50,6 @@ class MeronpanApp extends StatelessWidget {
   NavigationRailThemeData _buildRailTheme() {
     return const NavigationRailThemeData(
       useIndicator: true,
-      elevation: 4,
       backgroundColor: Colors.white,
       indicatorColor: Colors.lightBlueAccent,
       groupAlignment: 0.5,
@@ -65,7 +64,6 @@ class MeronpanApp extends StatelessWidget {
   NavigationRailThemeData _buildWindowsRailTheme() {
     return const NavigationRailThemeData(
       useIndicator: true,
-      elevation: 4,
       backgroundColor: Colors.white,
       indicatorColor: Colors.lightBlueAccent,
       selectedLabelTextStyle: TextStyle(
