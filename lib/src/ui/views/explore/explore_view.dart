@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:http_source/models/manga.dart';
 import 'package:meronpan_app/src/ui/providers/explore/explore_provider.dart';
 import 'package:meronpan_app/src/ui/providers/explore/state/explore_provider_state.dart';
 import 'package:meronpan_app/src/ui/views/explore/layouts/explore_view_android_layout.dart';
-import 'package:meronpan_app/src/ui/widgets/manga_cover.dart';
 
 class ExploreView extends ConsumerStatefulWidget {
   const ExploreView({Key? key}) : super(key: key);

@@ -341,7 +341,7 @@ packages:
     source: hosted
     version: "1.0.4"
   html:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: html
       url: "https://pub.dartlang.org"
@@ -371,10 +371,12 @@ packages:
   http_source:
     dependency: "direct main"
     description:
-      path: "packages/http_source"
-      relative: true
-    source: path
-    version: "1.0.0+1"
+      path: "."
+      ref: HEAD
+      resolved-ref: a9fc943a4d52e167eeb9387759a3c06eb8ccbae5
+      url: "https://github.com/MeronpanOrg/http_source.git"
+    source: git
+    version: "0.0.1"
   io:
     dependency: transitive
     description:
@@ -413,10 +415,12 @@ packages:
   manga_source:
     dependency: "direct main"
     description:
-      path: "packages/manga_source"
-      relative: true
-    source: path
-    version: "1.0.0+1"
+      path: "."
+      ref: HEAD
+      resolved-ref: "6d78ab20b2dead9d5f1cfe574f9ca0c2aa7e1325"
+      url: "https://github.com/MeronpanOrg/manga_source.git"
+    source: git
+    version: "1.0.0"
   matcher:
     dependency: transitive
     description:
@@ -705,10 +709,12 @@ packages:
   tmo_source:
     dependency: "direct main"
     description:
-      path: "packages/tmo_source"
-      relative: true
-    source: path
-    version: "1.0.0+1"
+      path: "."
+      ref: HEAD
+      resolved-ref: "57e66c3fc8177f436e175192299d65dcfb5ffc73"
+      url: "https://github.com/MeronpanOrg/tmo_source.git"
+    source: git
+    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:
@@ -766,5 +772,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.17.0 <3.0.0"
+  dart: ">=2.17.1 <3.0.0"
   flutter: ">=3.0.0"

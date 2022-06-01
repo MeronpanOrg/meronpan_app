@@ -4,7 +4,7 @@ import 'package:meronpan_app/src/core/config/network/dio_provider.dart';
 import 'package:tmo_source/data/data_sources/remote/tmo_source.dart';
 import 'package:tmo_source/data/repositories/tmo_repository.dart';
 
-final sourceProvider = StateProvider<HttpSource>((ref) {
+final sourceProvider = StateProvider<AHttpSource>((ref) {
   return TmoRepository(
     TmoSource(dio: ref.read(dioProvider), isSFWMode: false, showAllScans: true),
   );
