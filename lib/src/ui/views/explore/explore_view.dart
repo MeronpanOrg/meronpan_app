@@ -26,8 +26,10 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
 
   bool get _isBottom {
     if (!_scrollController.hasClients) return false;
+
     final maxScroll = _scrollController.position.maxScrollExtent;
     final currentScroll = _scrollController.offset;
+
     return currentScroll >= (maxScroll * 0.9);
   }
 
@@ -175,8 +177,13 @@ class _ExploreViewState extends ConsumerState<ExploreView> {
   }
 
   Widget _buildLoading() {
-    return const Center(
-      child: CircularProgressIndicator(),
+    final size = MediaQuery.of(context).size;
+    return SizedBox(
+      height: size.height,
+      width: size.width,
+      child: const Center(
+        child: CircularProgressIndicator(),
+      ),
     );
   }
 

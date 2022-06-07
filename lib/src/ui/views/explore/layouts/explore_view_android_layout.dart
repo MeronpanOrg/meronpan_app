@@ -17,7 +17,7 @@ class ExploreViewAndroidLayout extends StatelessWidget {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             // childAspectRatio: 4 / 7,
             crossAxisCount: 5,
-            mainAxisExtent: 260),
+            mainAxisExtent: 280),
       );
     }
     return SliverPadding(
@@ -25,7 +25,7 @@ class ExploreViewAndroidLayout extends StatelessWidget {
       sliver: SliverMangaGrid(
         mangas: mangas,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisSpacing: 4, crossAxisCount: 3, mainAxisExtent: 220),
+            crossAxisSpacing: 4, crossAxisCount: 3, mainAxisExtent: 240),
       ),
     );
   }

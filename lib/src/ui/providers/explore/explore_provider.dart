@@ -87,6 +87,7 @@ class ExploreNotifier extends StateNotifier<ExplorePaginaton> {
       state = state.copyWith(status: ExploreStatus.ongoing);
 
       // TODO: Make this abstract
+      // Maybe GetFilters
       final request = read(tmoFilterProvider);
 
       final mangasPage = await getSearchUseCase.getMangas(
