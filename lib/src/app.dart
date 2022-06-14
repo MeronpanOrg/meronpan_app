@@ -2,7 +2,9 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:meronpan_app/src/ui/views/views.dart';
+
+import 'modules/home/ui/views/home_view.dart';
+import 'modules/manga/ui/views/manga_view.dart';
 
 class MeronpanApp extends StatelessWidget {
   const MeronpanApp({Key? key}) : super(key: key);
