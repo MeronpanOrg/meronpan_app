@@ -25,8 +25,12 @@ class ExploreViewAndroidLayout extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       sliver: SliverMangaGrid(
         mangas: mangas,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisSpacing: 4, crossAxisCount: 3, mainAxisExtent: 240),
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 205,
+          crossAxisSpacing: 2.0,
+          mainAxisSpacing: 2.0,
+          childAspectRatio: 0.7,
+        ),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../explore/ui/views/explore/explore_view.dart';
+import '../../../explore/ui/views/explore_view.dart';
 import '../../../library/ui/views/library_view.dart';
 import '../../../more/ui/views/more_view.dart';
 import '../../../recents/ui/views/recents_view.dart';

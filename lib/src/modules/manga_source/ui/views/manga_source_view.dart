@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../layouts/explore_view_android_layout.dart';
-import '../../providers/explore_provider.dart';
-import '../../providers/state/explore_provider_state.dart';
+import '../layouts/explore_view_android_layout.dart';
+import '../providers/explore_provider.dart';
+import '../providers/state/explore_provider_state.dart';
 
-class ExploreView extends ConsumerStatefulWidget {
-  const ExploreView({Key? key}) : super(key: key);
+class MangaSourceView extends ConsumerStatefulWidget {
+  const MangaSourceView({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<ExploreView> createState() => _ExploreViewState();
+  ConsumerState<MangaSourceView> createState() => _MangaSourceViewState();
 }
 
-class _ExploreViewState extends ConsumerState<ExploreView> {
+class _MangaSourceViewState extends ConsumerState<MangaSourceView> {
   final ScrollController _scrollController = ScrollController();
 
   final _searchQueryController = TextEditingController();

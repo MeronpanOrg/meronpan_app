@@ -2,6 +2,7 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:meronpan_app/src/modules/manga_source/ui/views/manga_source_view.dart';
 
 import 'modules/home/ui/views/home_view.dart';
 import 'modules/manga/ui/views/manga_view.dart';
@@ -25,10 +26,12 @@ class MeronpanApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeView(),
+        '/source': (context) => const MangaSourceView(),
         '/manga': (context) => const MangaView()
       },
       themeMode: ThemeMode.system,
       theme: ThemeData.light().copyWith(
+        useMaterial3: true,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           elevation: 0,
