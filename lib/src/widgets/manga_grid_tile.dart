@@ -6,26 +6,23 @@ class MangaGridTile extends StatelessWidget {
   const MangaGridTile({
     Key? key,
     required this.manga,
+    this.onTap,
+    this.showTitle = true,
   }) : super(key: key);
 
   final Manga manga;
+  final void Function()? onTap;
+  final bool showTitle;
 
   @override
   Widget build(BuildContext context) {
     return InkResponse(
+      onTap: onTap,
       child: Card(
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: GridTile(
-          footer: ListTile(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-            dense: true,
-            title: Text(
-              (manga.title),
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Colors.white),
-            ),
-          ),
+          footer: _buildFooter(),
           child: Container(
             foregroundDecoration: BoxDecoration(
               gradient: LinearGradient(
@@ -53,5 +50,19 @@ class MangaGridTile extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  ListTile? _buildFooter() {
+    return showTitle
+        ? ListTile(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+            dense: true,
+            title: Text(
+              (manga.title),
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.white),
+            ),
+          )
+        : null;
   }
 }

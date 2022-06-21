@@ -291,6 +291,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  freezed_annotation:
+    dependency: "direct main"
+    description:
+      name: freezed_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.3"
   frontend_server_client:
     dependency: transitive
     description:
@@ -360,7 +367,7 @@ packages:
       name: http_multi_server
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.0"
+    version: "3.2.1"
   http_parser:
     dependency: transitive
     description:
@@ -373,7 +380,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: a9fc943a4d52e167eeb9387759a3c06eb8ccbae5
+      resolved-ref: c5887cbc5a29055ffa0b35604dba0c1593206bff
       url: "https://github.com/MeronpanOrg/http_source.git"
     source: git
     version: "0.0.1"
@@ -469,7 +476,7 @@ packages:
       name: package_config
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.1.0"
   path:
     dependency: transitive
     description:
@@ -497,7 +504,7 @@ packages:
       name: path_provider_ios
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.9"
+    version: "2.0.10"
   path_provider_linux:
     dependency: transitive
     description:
@@ -553,7 +560,7 @@ packages:
       name: pool
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.0"
+    version: "1.5.1"
   process:
     dependency: transitive
     description:
@@ -718,7 +725,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: a3011255b89de20d51996cd0529cfb6f2d29c20e
+      resolved-ref: "098ff26a2e1863e8dce84e25f4f46376bf3e835f"
       url: "https://github.com/MeronpanOrg/tmo_source.git"
     source: git
     version: "0.0.1"

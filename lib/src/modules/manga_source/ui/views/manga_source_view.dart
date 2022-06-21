@@ -21,6 +21,7 @@ class _MangaSourceViewState extends ConsumerState<MangaSourceView> {
 
   void _onScroll() {
     if (_isBottom) {
+      print('This call');
       ref.read(exploreProvider.notifier).getPopulars();
     }
   }
